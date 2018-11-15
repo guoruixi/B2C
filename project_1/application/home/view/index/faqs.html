@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="order by dede58.com"/>
+<title>Floral Shop, FAQs, Online Shopping</title>
+<meta name="keywords" content="free template, faqs, floral shop, ecommerce, online shopping, store" />
+<meta name="description" content="Floral Shop, FAQs or Frequently Asked Questions, free theme for online shopping sites" />
+<link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="css/orman.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
+
+<link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/ddsmoothmenu.js">
+
+/***********************************************
+* Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+</script>
+
+<script type="text/javascript">
+
+ddsmoothmenu.init({
+	mainmenuid: "templatemo_menu", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+
+</script>
+
+
+</head>
+
+<body>
+
+<div id="templatemo_wrapper_sp">
+<div id="templatemo_header_wsp">
+	<div id="templatemo_header" class="header_subpage">
+        <div id="nav_title" style="width: 100%;height: 40px;">
+            <div style="line-height: 40px;font-size: 16px;float: right;">
+                <a href="index.php?s=home/index/register">注册</a> | <a href="index.php?s=home/index/login">登录</a> | <a href="index.php?s=home/index/exitLogin">退出登录</a>
+            </div>            
+        </div>
+    	<div id="site_title"><a href="http://www.templatemo.com" rel="nofollow">Free CSS Templates</a></div>
+        <div id="templatemo_menu" class="ddsmoothmenu">
+            <ul>
+                <li><a href="index.php?s=home/index/index">首页</a></li>
+                <li><a href="index.php?s=home/index/products">产品中心</a></li>
+                <li><a href="index.php?s=home/index/shoppingcart">我的购物车</a></li>
+                <!-- <li><a href="index.php?s=home/index/checkout">我的订单</a></li> -->
+                <li><a href="index.php?s=home/index/contact">收货地址</a></li>
+                <li><a href="index.php?s=home/index/about">关于我们</a></li>
+                <li><a href="index.php?s=home/index/faqs" class="selected">常见问题</a></li>
+            </ul>
+        </div>
+        <br style="clear: left" />
+        </div>
+    </div> <!-- END of header -->
+</div> <!-- END of header wrapper -->
+<div id="templatemo_main_wrapper">
+<div id="templatemo_main">
+	<div id="sidebar" class="left">
+    	<div class="sidebar_box"><span class="bottom"></span>
+            <h3>产品分类</h3>   
+            <div class="content"> 
+                <ul class="sidebar_list">
+                    <?php foreach($category as $key=>$val){?>
+                        <li><a href="index.php?s=home/index/index&category_id=<?= $val['id']?>"><?= $val['name']?></a></li>
+                    <?php }?>
+                </ul>
+            </div>
+        </div>
+        <div class="sidebar_box"><span class="bottom"></span>
+            <h3>Weekly Special</h3>   
+            <div class="content special"> 
+                <img style="width: 220px;height: 220px;" src="http://img14.yiguoimg.com/d/items/2018/180925/9288731755455801_300.jpg" alt="Flowers" />
+                <a href="#">Citrus Burst Bouquet</a>
+                <p>
+                	Price:
+                    <span class="price normal_price">$160</span>&nbsp;&nbsp;
+                    <span class="price special_price">$100</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="content" class="right faqs">
+		<h2>常见问题解答</h2>
+            <h5>我如何知道订单是否已下达？</h5>
+            <p>您将收到一封确认已收到订单的电子邮件。如果您没有收到确认电子邮件，请登录查看您的订单状态。
+
+            <h5>我的订单什么时候发货？</h5>
+            <p>请阅读我们的运输政策。点击<a href="#">这里</a></p>
+            
+            <h5>你接受什么支付方式？</h5>
+            <p>PayPal和2Checkout（2CO）</p>
+            
+            <h5>如果我不喜欢，我可以退货或换货吗？</h5>
+            <p>请阅读我们的交换政策。点击<a href="#">这里</a></p>
+            
+            <h5>我如何知道在线订购是否安全？</h5>
+            <p>保护您的信息是本网站的首要任务。我们使用安全套接字层（SSL）来加密您的信用卡号，名称和地址，因此只有此站点才能解码您的信息。SSL是计算机安全通信的行业标准方法，没有数据拦截，操纵或接收者模仿的风险。确保您的连接安全; 当您在购物车中时，请查看浏览器窗口的下角。如果您看到完整的密钥或已关闭的锁，则SSL处于活动状态且您的信息是安全的。由于大多数客户仍然不满意在线提供您的信用卡，我们使用PayPal和2CheckOut服务，他们不需要提供信用卡信息。</p>
+          <p>该网站已注册HackerGuardian。黑客免费网站和信用卡TrustLogo的HackerGuardian认证确认您可以在线获取信用卡详细信息。</p>
+
+			
+            <h5>你的隐私政策是什么？</h5>
+            <p>本网站尊重您的隐私，并确保您了解我们完成订单所需的信息，以及您可以选择与我们以及我们的营销合作伙伴分享的信息。有关我们隐私政策的完整信息，请访问我们的隐私政策 页面。</p>
+            <div class="cleaner h40"></div>
+        <div class="blank_box">
+        	<a href="javascript:;"><img src="images/free_shipping.jpg" alt="Free Shipping" /></a>
+        </div>    
+    </div>
+    <div class="cleaner"></div>
+</div> <!-- END of main -->
+</div> <!-- END of main wrapper -->
+
+<div id="templatemo_footer_wrapper">
+<div id="templatemo_footer">
+	<div class="footer_left">
+    	<a href="#"><img src="images/1311260370_paypal-straight.png" alt="Paypal" /></a>
+        <a href="#"><img src="images/1311260374_mastercard-straight.png" alt="Master" /></a>
+        <a href="#"><img src="images/1311260374_visa-straight.png" alt="Visa" /></a>
+    </div>
+	<div class="footer_right">
+		<p><a href="index.html">Home</a> | <a href="products.html">Products</a> | <a href="about.html">About</a> | <a href="faqs.html">FAQs</a> | <a href="checkout.html">Checkout</a> | <a href="contact.html">Contact</a></p>
+        <p>Copyright © 2084 <a href="#">Company Name</a> | Design: <a href="http://www.templatemo.com/preview/templatemo_385_floral_shop" rel="nofollow">Floral Shop</a></p>
+	</div>
+    <div class="cleaner"></div>
+</div> <!-- END of footer -->
+</div> <!-- END of footer wrapper -->
+</div>
+
+</body>
+<script type='text/javascript' src='js/logging.js'></script>
+</html>

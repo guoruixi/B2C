@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <base href="/flower_project/public/"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="order by dede58.com"/>
+<title>Floral Shop, Shopping Cart, Online Store</title>
+<meta name="keywords" content="free template, shopping cart, floral, ecommerce, online, store" />
+<meta name="description" content="Floral, Shopping Cart, free template for ecommerce websites." />
+<link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="css/orman.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
+
+<link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/ddsmoothmenu.js">
+
+/***********************************************
+* Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+</script>
+
+<script type="text/javascript">
+
+ddsmoothmenu.init({
+	mainmenuid: "templatemo_menu", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+
+</script>
+
+
+</head>
+
+<body>
+
+<div id="templatemo_wrapper_sp">
+<div id="templatemo_header_wsp">
+	<div id="templatemo_header" class="header_subpage">
+        <div id="nav_title" style="width: 100%;height: 40px;">
+            <div style="line-height: 40px;font-size: 16px;float: right;">
+                <a href="index.php?s=home/index/register">注册</a> | <a href="index.php?s=home/index/login">登录</a> | <a href="index.php?s=home/index/exitLogin">退出登录</a>
+            </div>            
+        </div>
+    	<div id="site_title"><a href="http://www.templatemo.com" rel="nofollow">Free CSS Templates</a></div>
+        <div id="templatemo_menu" class="ddsmoothmenu">
+            <ul>
+                <li><a href="index.php?s=home/index/index">首页</a></li>
+                <li><a href="index.php?s=home/index/products">产品中心</a></li>
+                <li><a href="index.php?s=home/index/shoppingcart" class="selected">我的购物车</a></li>
+                <!-- <li><a href="index.php?s=home/index/checkout">我的订单</a></li> -->
+                <li><a href="index.php?s=home/index/contact">收货地址</a></li>
+                <li><a href="index.php?s=home/index/about">关于我们</a></li>
+                <li><a href="index.php?s=home/index/faqs">常见问题</a></li>
+            </ul>
+            <br style="clear: left" />
+        </div>
+
+    </div> <!-- END of header -->
+</div> <!-- END of header wrapper -->
+<div id="templatemo_main_wrapper">
+<div id="templatemo_main">
+	<div id="sidebar" class="left">
+    	<div class="sidebar_box"><span class="bottom"></span>
+            <h3>产品分类</h3>   
+            <div class="content"> 
+                <ul class="sidebar_list">
+                    <?php foreach($category as $key=>$val){?>
+                        <li><a href="index.php?s=home/index/index&category_id=<?= $val['id']?>"><?= $val['name']?></a></li>
+                    <?php }?>
+                </ul>
+            </div>
+        </div>
+        <div class="sidebar_box"><span class="bottom"></span>
+            <h3>Weekly Special</h3>   
+            <div class="content special"> 
+                <img style="width: 220px;height: 220px;" src="http://img14.yiguoimg.com/d/items/2018/180925/9288731755455801_300.jpg" alt="Flowers" />
+                <a href="#">Citrus Burst Bouquet</a>
+                <p>
+                	Price:
+                    <span class="price normal_price">$160</span>&nbsp;&nbsp;
+                    <span class="price special_price">$100</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="content" class="right">
+    	<h2>购物车</h2>
+		<table width="700" border="0" cellpadding="5" cellspacing="0">
+            <tr bgcolor="#395015">
+                <th width="168" align="left">Item</th> 
+                <th width="188" align="left">Description</th> 
+                <th width="60" align="center">Quantity</th> 
+                <th width="80" align="right">Price</th> 
+                <th width="80" align="right">Total</th> 
+                <th width="64"> </th>
+            </tr>
+            <?php foreach($product_list as $key=>$val){?>
+                <tr bgcolor="#41581B" cart_id="<?= $val['cart_id']?>" product_id="<?= $val['id']?>" class="cart_list">
+                    <td><img src="<?= $val['main_img_url']?>" alt="flower image 1" width="200" height="200"/></td> 
+                    <td><?= $val['name']?></td> 
+                    <td align="center"><input name="quantity1" type="text" id="quantity1" value="<?= $val['counts']?>" size="6" maxlength="3" /> </td>
+                    <td align="right">$<?= $val['price']?></td> 
+                    <td align="right">$<?= round($val['counts'] * $val['price'],2)?></td>
+                    <td align="center"> <a href="javascript:;" name="delCart"><img src="images/remove.png" alt="删除" /><br />删除</a> </td>
+                </tr>
+            <?php }?>
+        <tr bgcolor="#41581B">
+                <td colspan="3">Have you modified item quantities? Please <a href="shoppingcart.html"><strong>Update</strong></a> the Cart.&nbsp;&nbsp;</td>
+                <td align="right"><h4>小计:</h4></td>
+                <td align="right"><h4>$ <span id="total_price"><?= $total_price?></span></h4></td>
+                <td> </td>
+            </tr>
+        </table>
+		<div class="cleaner h20"></div>
+        <div class="right"><a href="javascript:void(0);" class="button" id="sub_order">下单</a></div>
+        <div class="cleaner h20"></div>
+        <div class="blank_box">
+        	<a href="#"><img src="images/free_shipping.jpg" alt="Free Shipping" /></a>
+        </div>    
+    </div>
+    <div class="cleaner"></div>
+</div> <!-- END of main -->
+</div> <!-- END of main wrapper -->
+
+<div id="templatemo_footer_wrapper">
+<div id="templatemo_footer">
+	<div class="footer_left">
+    	<a href="#"><img src="images/1311260370_paypal-straight.png" alt="Paypal" /></a>
+        <a href="#"><img src="images/1311260374_mastercard-straight.png" alt="Master" /></a>
+        <a href="#"><img src="images/1311260374_visa-straight.png" alt="Visa" /></a>
+    </div>
+	<div class="footer_right">
+		<p><a href="index.html">Home</a> | <a href="products.html">Products</a> | <a href="about.html">About</a> | <a href="faqs.html">FAQs</a> | <a href="checkout.html">Checkout</a> | <a href="contact.html">Contact</a></p>
+        <p>Copyright © 2084 <a href="#">Company Name</a> | Design: <a href="http://www.templatemo.com/preview/templatemo_385_floral_shop" rel="nofollow">Floral Shop</a></p>
+	</div>
+    <div class="cleaner"></div>
+</div> <!-- END of footer -->
+</div> <!-- END of footer wrapper -->
+</div>
+
+</body>
+<script type='text/javascript' src='js/logging.js'></script>
+</html>
+<script>
+    $("[name='delCart']").click(function(){
+        var product_id = $(this).parents('tr').attr('product_id')
+        $.ajax({
+            url:"index.php?s=home/index/deleteCart&product_id="+product_id,
+            success:function(res){
+                // console.log(res);
+                if(res == 1){
+                    history.go(0)
+                }
+            }
+        })
+    })
+    $("[name='quantity1']").blur(function(){
+        var counts = $(this).val()
+        var product_id = $(this).parents('tr').attr('product_id')
+        $.ajax({
+            url:"index.php?s=home/index/changeNum",
+            data:{counts:counts,id:product_id},
+            type:"post",
+            dataType:"json",
+            success:function(res){
+                if(res.code == 1){
+                    $("#total_price").text(res.total_price);
+                    $("[name='quantity1']").parents("td").next().next().text("$"+res.small_price)
+                }
+            }
+        })
+    })
+    $("#sub_order").click(function(){
+        var cart_arr=new Array()
+        var cart_id=$(".cart_list")
+        var cart_str="";
+        for (var i = 0; i < cart_id.length; i++) {
+            // console.log(cart_id.eq(i).attr("cart_id"))
+            cart_arr.push(cart_id.eq(i).attr("cart_id"))
+            cart_str+=cart_id.eq(i).attr("cart_id")+",";
+        }
+
+        $.ajax({
+            url:"index.php?s=home/index/add_order",
+            type:"post",
+            data:{cart_str,cart_str},
+            success:function(res){
+                if(res){
+                    window.location.href="index.php?s=home/index/checkout&order_id="+res;
+                }
+            }
+        })
+    })
+</script>

@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="order by dede58.com"/>
+<title>Floral Shop, Contact, Online Store</title>
+<meta name="keywords" content="free template, contact, floral shop, ecommerce, online store" />
+<meta name="description" content="Floral Shop, Contact Form, Location Maps, Addresses, free template for ecommerce websites." />
+<link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="css/orman.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
+
+<link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/ddsmoothmenu.js">
+
+/***********************************************
+* Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+</script>
+
+<script type="text/javascript">
+
+ddsmoothmenu.init({
+	mainmenuid: "templatemo_menu", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+
+</script>
+
+
+</head>
+
+<body>
+
+<div id="templatemo_wrapper_sp">
+<div id="templatemo_header_wsp">
+	<div id="templatemo_header" class="header_subpage">
+        <div id="nav_title" style="width: 100%;height: 40px;">
+            <div style="line-height: 40px;font-size: 16px;float: right;">
+                <a href="index.php?s=home/index/register">注册</a> | <a href="index.php?s=home/index/login">登录</a> | <a href="index.php?s=home/index/exitLogin">退出登录</a>
+            </div>            
+        </div>
+    	<div id="site_title"><a href="http://www.templatemo.com" rel="nofollow">Free CSS Templates</a></div>
+        <div id="templatemo_menu" class="ddsmoothmenu">
+            <ul>
+                <li><a href="index.php?s=home/index/index">首页</a></li>
+                <li><a href="index.php?s=home/index/products">产品中心</a></li>
+                <li><a href="index.php?s=home/index/shoppingcart">我的购物车</a></li>
+                <!-- <li><a href="index.php?s=home/index/checkout">我的订单</a></li> -->
+                <li><a href="index.php?s=home/index/contact" class="selected">收货地址</a></li>
+                <li><a href="index.php?s=home/index/about">关于我们</a></li>
+                <li><a href="index.php?s=home/index/faqs">常见问题</a></li>
+            </ul>
+            <br style="clear: left" />
+        </div>
+    </div> <!-- END of header -->
+</div> <!-- END of header wrapper -->
+<div id="templatemo_main_wrapper">
+<div id="templatemo_main">
+	<div id="sidebar" class="left">
+    	<div class="sidebar_box"><span class="bottom"></span>
+            <h3>产品分类</h3>   
+            <div class="content"> 
+                <ul class="sidebar_list">
+                    <?php foreach($category as $key=>$val){?>
+                        <li><a href="index.php?s=home/index/index&category_id=<?= $val['id']?>"><?= $val['name']?></a></li>
+                    <?php }?>
+                </ul>
+            </div>
+        </div>
+        <div class="sidebar_box"><span class="bottom"></span>
+            <h3>Weekly Special</h3>   
+            <div class="content special"> 
+                <img style="width: 220px;height: 220px;" src="http://img14.yiguoimg.com/d/items/2018/180925/9288731755455801_300.jpg" alt="Flowers" />
+                <a href="#">Citrus Burst Bouquet</a>
+                <p>
+                	Price:
+                    <span class="price normal_price">$160</span>&nbsp;&nbsp;
+                    <span class="price special_price">$100</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="content" class="right">
+        <h2>收货地址</h2>
+        <div name="new_address">
+            {volist  name="address" id="val"}            
+                <input type="radio" name="user_address" style="float: left;" />
+                <h4>{$val.name}&nbsp;&nbsp;{$val.mobile}&nbsp;&nbsp;{$val.country}&nbsp;{$val.province}&nbsp;{$val.city}{$val.detail}</h4><br />
+            {/volist}
+        </div>
+        <div name="address">
+            <div class="content_half left form_field">
+                全名（必须与信用卡相同）
+                <input name="name" type="text" id="fullname" maxlength="40" /><br />
+                手机号:
+                <input name="mobile" type="text" id="phone" maxlength="40" /><br />
+                国家:
+                <input name="country" type="text" id="country" maxlength="40" /><br/><br/><br/>
+                <input type="button" id="add_userAddress" value="添加新地址" />
+            </div>
+            
+            <div class="content_half right form_field">
+                省份:
+                <input name="province" type="text" id="email" maxlength="40" /><br />
+                城市:
+                <input name="city" type="text" id="city" maxlength="40" /><br />
+                详细地址:
+                <input name="detail" type="text" id="address" maxlength="40" /><br />
+                <span>请指定您的可到达的电话号码给您打电话确认。</span>
+            </div>
+        </div>
+
+        <div class="cleaner h40"></div>        
+        <div class="blank_box">
+        	<a href="#"><img src="images/free_shipping.jpg" alt="Free Shipping" /></a>
+        </div>  
+        <div class="cleaner"></div>  
+    </div>
+    <div class="cleaner"></div>
+</div> <!-- END of main -->
+</div> <!-- END of main wrapper -->
+</div>
+
+</body>
+<script type='text/javascript' src='js/logging.js'></script>
+</html>
+<script>
+    $("#add_userAddress").click(function(){
+        var name = $("[name='name']").val()
+        var mobile = $("[name='mobile']").val()
+        var country = $("[name='country']").val()
+        var city = $("[name='city']").val()
+        var province = $("[name='province']").val()
+        var detail = $("[name='detail']").val()
+        if(name == ""){
+            return false;
+        }else if(mobile == ""){
+            return false;
+        }else if(country == ""){
+            return false;
+        }else if(city == ""){
+            return false;
+        }else if(province == ""){
+            return false;
+        }else if(detail == ""){
+            return false;
+        }
+        // var data_arr = new Array();
+        $.ajax({
+            url:"index.php?s=home/index/add_userAddress",
+            data:{name:name,mobile:mobile,country:country,city:city,province:province,detail,detail},
+            type:"post",
+            dataType:"json",
+            success:function(res){
+                if(res.code == 200){
+                    var str = "";
+                    $.each(res.address,function(i,v){
+                        str += '<input type="radio" name="user_address" style="float: left;" /><h4>'+v.name+'&nbsp;&nbsp;'+v.mobile+'&nbsp;&nbsp;'+v.country+'&nbsp;'+v.province+'&nbsp;'+v.city+v.detail+'</h4><br />';
+                    })
+                    $("[name='new_address']").html(str);
+                    history.go(0)
+                }
+            }
+        })
+    })
+</script>
